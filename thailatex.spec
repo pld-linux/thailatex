@@ -43,6 +43,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+install -d $RPM_BUILD_ROOT%{_datadir}/texmf/fonts/{tfm,type1,vf}/public
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -60,11 +62,19 @@ umask 022
 %attr(755,root,root) %{_bindir}/tlatex
 %attr(755,root,root) %{_sbindir}/sync-babel
 %attr(755,root,root) %{_sbindir}/sync-thailatex
+# XXX common dirs - should belong to texlive?
 %dir %{_datadir}/texmf/fonts/afm
 %dir %{_datadir}/texmf/fonts/afm/public
+%dir %{_datadir}/texmf/fonts/tfm
+%dir %{_datadir}/texmf/fonts/tfm/public
+%dir %{_datadir}/texmf/fonts/type1
+%dir %{_datadir}/texmf/fonts/type1/public
+%dir %{_datadir}/texmf/fonts/vf
+%dir %{_datadir}/texmf/fonts/vf/public
+%dir %{_datadir}/texmf/tex/generic/babel
+# XXX common dirs end
 %{_datadir}/texmf/fonts/afm/public/thai
 %{_datadir}/texmf/fonts/enc/dvips/thai
-%dir %{_datadir}/texmf/tex/generic/babel
 %{_datadir}/texmf/tex/generic/babel/lthenc.def
 %{_datadir}/texmf/tex/generic/babel/thai.ldf
 %{_datadir}/texmf/tex/generic/babel/thswitch.sty
