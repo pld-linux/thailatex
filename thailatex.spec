@@ -11,6 +11,7 @@ Source0:	http://linux.thai.net/pub/thailinux/software/thailatex/%{name}-%{versio
 URL:		http://linux.thai.net/projects/thailatex
 BuildRequires:	texlive-format-pdflatex
 BuildRequires:	texlive-latex
+Requires(post,postun):	texlive
 Requires:	texlive-latex
 Requires:	texlive-tex-babel
 Suggests:	swath
