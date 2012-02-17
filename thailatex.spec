@@ -2,12 +2,12 @@
 Summary:	Enable typesetting Thai with LaTeX standard document classes
 Summary(pl.UTF-8):	Umożliwienie składu tajskiego przy użyciu standardowych klas dokumentów LaTeXa
 Name:		thailatex
-Version:	0.4.6
+Version:	0.4.7
 Release:	1
 License:	LPPL v1.3+
 Group:		Applications/Publishing
 Source0:	http://linux.thai.net/pub/thailinux/software/thailatex/%{name}-%{version}.tar.gz
-# Source0-md5:	ec825bc15527ee90d52a0f02868e8e80
+# Source0-md5:	189a396bf4f720c146809a857a8457b5
 URL:		http://linux.thai.net/projects/thailatex
 BuildRequires:	texlive-format-pdflatex
 BuildRequires:	texlive-latex
@@ -43,7 +43,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT%{_datadir}/texmf/fonts/{tfm,type1,vf}/public
+install -d $RPM_BUILD_ROOT%{_datadir}/texmf/fonts/{afm,tfm,type1,vf}/public
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -71,11 +71,9 @@ umask 022
 %dir %{_datadir}/texmf/fonts/type1/public
 %dir %{_datadir}/texmf/fonts/vf
 %dir %{_datadir}/texmf/fonts/vf/public
-%dir %{_datadir}/texmf/tex/generic/babel
 # XXX common dirs end
-%{_datadir}/texmf/fonts/afm/public/thai
-%{_datadir}/texmf/fonts/enc/dvips/thai
-%{_datadir}/texmf/tex/generic/babel/lthenc.def
-%{_datadir}/texmf/tex/generic/babel/thai.ldf
-%{_datadir}/texmf/tex/generic/babel/thswitch.sty
-%{_datadir}/texmf/tex/generic/babel/tis620.def
+%dir %{_datadir}/texmf/tex/generic/thailatex
+%{_datadir}/texmf/tex/generic/thailatex/lthenc.def
+%{_datadir}/texmf/tex/generic/thailatex/thai.ldf
+%{_datadir}/texmf/tex/generic/thailatex/thswitch.sty
+%{_datadir}/texmf/tex/generic/thailatex/tis620.def
