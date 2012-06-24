@@ -2,12 +2,12 @@
 Summary:	Enable typesetting Thai with LaTeX standard document classes
 Summary(pl.UTF-8):	Umożliwienie składu tajskiego przy użyciu standardowych klas dokumentów LaTeXa
 Name:		thailatex
-Version:	0.4.7
+Version:	0.5.0
 Release:	1
 License:	LPPL v1.3+
 Group:		Applications/Publishing
 Source0:	http://linux.thai.net/pub/thailinux/software/thailatex/%{name}-%{version}.tar.gz
-# Source0-md5:	189a396bf4f720c146809a857a8457b5
+# Source0-md5:	937eda375ee17beda20602dcd67e13d4
 URL:		http://linux.thai.net/projects/thailatex
 BuildRequires:	texlive-format-pdflatex
 BuildRequires:	texlive-latex
@@ -73,7 +73,10 @@ umask 022
 %dir %{_datadir}/texmf/fonts/vf/public
 # XXX common dirs end
 %dir %{_datadir}/texmf/tex/generic/thailatex
+%{_datadir}/texmf/tex/generic/thailatex/hyph-th.tex
+%{_datadir}/texmf/tex/generic/thailatex/hyph-th-utf8.tex
 %{_datadir}/texmf/tex/generic/thailatex/lthenc.def
+%{_datadir}/texmf/tex/generic/thailatex/loadhyph-th.tex
 %{_datadir}/texmf/tex/generic/thailatex/thai.ldf
 %{_datadir}/texmf/tex/generic/thailatex/thswitch.sty
 %{_datadir}/texmf/tex/generic/thailatex/tis620.def
