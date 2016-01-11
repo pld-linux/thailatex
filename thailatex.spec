@@ -3,7 +3,7 @@ Summary:	Enable typesetting Thai with LaTeX standard document classes
 Summary(pl.UTF-8):	Umożliwienie składu tajskiego przy użyciu standardowych klas dokumentów LaTeXa
 Name:		thailatex
 Version:	0.5.1
-Release:	1
+Release:	2
 License:	LPPL v1.3+
 Group:		Applications/Publishing
 Source0:	http://linux.thai.net/pub/thailinux/software/thailatex/%{name}-%{version}.tar.xz
